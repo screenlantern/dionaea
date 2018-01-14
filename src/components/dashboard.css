@@ -22,6 +22,10 @@
     text-transform: uppercase;
 }
 
-.show-list{
-    
+.overlay-open {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+    background-color: #6A8A93 !important;
 }

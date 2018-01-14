@@ -48,6 +48,7 @@ class IpMap extends Component {
                 projectionConfig={{
                     scale: 350,
                     rotation: [-10,0,0],
+                    yOffset: 65,
                   }}
                 >
                 <ZoomableGroup zoom={ this.state.zoom }
@@ -79,7 +80,7 @@ class IpMap extends Component {
                         marker={{ coordinates: m.properties.coords }}
                         onClick={ this.handleMClick }
                         style={{
-                            default: { fill: "#BE465B", stroke:"#000", strokeWidth: 1.25 },
+                            default: { fill: "#F95724", stroke:"#000", strokeWidth: 1.25 },
                             hover:   { fill: "#2B7784", stroke:"#000", strokeWidth: 1.25  },
                             pressed: { fill: "#000" },
                         }}
@@ -97,10 +98,10 @@ class IpMap extends Component {
                         dy={ 30 }
                         subject={  a.properties.coords}
                         strokeWidth={ 1 }
-                        stroke="#BE465B"
+                        stroke="#F95724"
                         curve={0.5}
                         >
-                        <text fill="#BE465B">
+                        <text fill="#F95724">
                         { a.properties.country }
                         </text>
                         </Annotation>

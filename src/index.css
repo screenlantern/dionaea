@@ -36,17 +36,12 @@ html, body {
 
 /* Overlay closing cross */
 .overlay .overlay-close {
-	width: 80px;
-	height: 80px;
 	position: absolute;
 	right: 20px;
-	top: 20px;
-	overflow: hidden;
-	border: none;
-	text-indent: 200%;
-	color: transparent;
-	outline: none;
+	top: 50%;
+	transform: translateY(-50%);
 	z-index: 100;
+	background-color: #F95724 !important;
 }
 
 .overlay p {
@@ -77,10 +72,6 @@ html, body {
 	opacity: 0.9;
 }
 
-.overlay ul li a:hover,
-.overlay ul li a:focus {
-	color: #f0f0f0;
-}
 
 /* Effects */
 .overlay-door {
@@ -106,19 +97,16 @@ html, body {
 	transition: opacity 0.3s 0.5s;
 }
 
-.overlay-door.open nav,
 .overlay-door.open .overlay-close {
 	opacity: 1;
 	-webkit-transition-delay: 0.5s;
 	transition-delay: 0.5s;
 }
 
-.overlay-door.close nav,
 .overlay-door.close .overlay-close {
 	-webkit-transition-delay: 0s;
 	transition-delay: 0s;
 }
-
 
 @media screen and (max-height: 30.5em) {
 	.overlay nav {

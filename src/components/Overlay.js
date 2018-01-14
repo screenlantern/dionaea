@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FABButton, Icon } from 'react-mdl';
 import AttackList from './AttackList';
 export default
 class Overlay extends Component{
@@ -29,7 +30,9 @@ class Overlay extends Component{
                         ))
                     }
                 </div>
-                <button onClick={this.props.overlayClose} type="button" className="overlay-close">Close</button>
+                <FABButton className="overlay-close" onClick={this.props.overlayClose} colored ripple>
+                    <Icon name="first_page" />
+                </FABButton>
             </div>
         );
     }
