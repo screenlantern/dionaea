@@ -1,5 +1,6 @@
 .dashboard{
     position: relative;
+    height: calc(100vh - 10px);
 }
 
 .dashboard__main{
