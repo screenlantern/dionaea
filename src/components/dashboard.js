@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Layout } from 'react-mdl';
+import { ipsPerCountry } from '../utils';
 import HeaderBar from './header';
 import Sidebar from './sidebar';
 import Map from './ipmap';
@@ -12,18 +13,20 @@ class Dashboard extends Component {
 
         this.state = {
             data: [],
-            ipData: []
+            ipData: [],
+            perCountry: {}
         }
     }
 
     componentDidMount() {
-        fetch('http://localhost:9000/api/connections/25')
+        fetch('http://localhost:9000/api/connections/200')
         .then(res => res.json())
         .then(data => {
             this.setState({
                 data
             });
             this.buildMapObjects();
+            this.perCountryCount();
         }); 
     }
 
@@ -34,14 +37,22 @@ class Dashboard extends Component {
                 "properties": {
                     "city": obj.locale_info.city,
                     "country": obj.locale_info.country,
-                    "coords": [obj.locale_info.lon, obj.locale_info.lat]
+                    "coords": [obj.locale_info.lon, obj.locale_info.lat],
+                    "ip": obj.remote_host
                 }
             });
         }); 
-
         this.setState({
             ipData: ips
         });
+    }
+
+    perCountryCount() {
+        const countries = this.state.ipData.map((c) => c.properties.country );
+        this.setState({
+            perCountry: ipsPerCountry(countries)
+        });
+        console.log(this.state.perCountry);
     }
 
     render() {

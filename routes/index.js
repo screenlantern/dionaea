@@ -35,7 +35,8 @@ exports.plugin = {
                         connection_type: obj.connection_type,
                         connection_timestamp: datefns.format( new Date(Number(obj.connection_timestamp)), 'MM/DD/YYYY'),
                         connection_protocol: obj.connection_protocol,
-                        remote_port: obj.remote_port,   
+                        remote_port: obj.remote_port,
+                        remote_host: obj.remote_host,   
                         locale_info: locale
                     };
                     

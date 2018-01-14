@@ -10,7 +10,6 @@ import {
     Annotation
   } from "react-simple-maps"
 
-
 export default
 class IpMap extends Component {
     constructor(props) {
@@ -30,13 +29,6 @@ class IpMap extends Component {
         this.setState({
             zoom: this.state.zoom / 2,
         })
-    }
-    handleMoveStart(currentCenter) {
-        console.log("New center: ", currentCenter)
-    }
-      
-    handleMoveEnd(newCenter) {
-        console.log("New center: ", newCenter)
     }
 
     handleGClick(geography, evt) {
@@ -70,7 +62,7 @@ class IpMap extends Component {
                         style={{
                             default: {
                               fill: "#666",
-                              stroke: "#FFF",
+                              stroke: "#F6F6F6",
                               strokeWidth: 0.5,
                               outline: "none",
                             },
@@ -87,12 +79,12 @@ class IpMap extends Component {
                         marker={{ coordinates: m.properties.coords }}
                         onClick={ this.handleMClick }
                         style={{
-                            default: { fill: "#BE465B" },
-                            hover:   { fill: "#2B7784" },
+                            default: { fill: "#BE465B", stroke:"#000", strokeWidth: 1.25 },
+                            hover:   { fill: "#2B7784", stroke:"#000", strokeWidth: 1.25  },
                             pressed: { fill: "#000" },
                         }}
                         >
-                        <circle cx={ 0 } cy={ 0 } r={ 10 } />
+                        <circle cx={ 0 } cy={ 0 } r={ 7 } />
                         </Marker>
                     ))}
                     </Markers>
@@ -105,8 +97,10 @@ class IpMap extends Component {
                         dy={ 30 }
                         subject={  a.properties.coords}
                         strokeWidth={ 1 }
+                        stroke="#BE465B"
+                        curve={0.5}
                         >
-                        <text>
+                        <text fill="#BE465B">
                         { a.properties.country }
                         </text>
                         </Annotation>

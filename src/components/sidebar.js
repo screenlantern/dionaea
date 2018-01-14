@@ -3,9 +3,9 @@ import { Drawer, Navigation } from 'react-mdl';
 
 const SideBar = (props) => {
     return(
-        <Drawer title="">
+        <Drawer className="dashboard__sidebar" title="">
             <Navigation>
-                <a href="#">Link</a>
+                <a href="#">Attacks Per Country</a>
             </Navigation>
         </Drawer>
     );
