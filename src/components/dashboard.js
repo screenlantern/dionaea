@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Layout } from 'react-mdl';
 import { ipsPerCountry } from '../utils';
-import HeaderBar from './header';
-import Sidebar from './sidebar';
-import Map from './ipmap';
+import HeaderBar from './Header';
+import Sidebar from './Sidebar';
+import Map from './Ipmap';
 import './dashboard.css';
 
 export default
