@@ -49,7 +49,7 @@ class IpMap extends Component {
             <div className="dashboard__map" >
                 <ComposableMap
                 width="1440"
-                height="1080"
+                height="1280"
                 projectionConfig={{
                     scale: 350,
                     rotation: [-10,0,0],
