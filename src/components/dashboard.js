@@ -34,7 +34,7 @@ class Dashboard extends Component {
                 "properties": {
                     "city": obj.locale_info.city,
                     "country": obj.locale_info.country,
-                    "coords": [obj.locale_info.lat, obj.locale_info.lon]
+                    "coords": [obj.locale_info.lon, obj.locale_info.lat]
                 }
             });
         }); 

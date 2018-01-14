@@ -59,6 +59,7 @@ class IpMap extends Component {
                   }}
                 >
                 <ZoomableGroup zoom={ this.state.zoom }
+                center={[0,0]}
                 onMoveStart={this.handleMoveStart}
                 onMoveEnd={this.handleMoveEnd} 
                 >

@@ -5,7 +5,7 @@ const datefns = require('date-fns');
 let connJson = require('../data/connections.json');
 let getLocale = (ip) => {
     return new Promise((res) => {
-        request(`http://ip-api.com/json/${ip}`, {json: true}, (err, resp, body) => {
+        request(`http://extreme-ip-lookup.com/json/${ip}`, {json: true}, (err, resp, body) => {
             res(body);
          });
     })
