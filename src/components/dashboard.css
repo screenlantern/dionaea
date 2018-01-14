@@ -1,0 +1,23 @@
+.dashboard{
+    position: relative;
+    height: calc(100vh - 44px);
+}
+
+.dashboard__main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row;
+}
+
+.dashboard__map{
+    margin-top: 5px;
+}
+
+.mdl-layout__header{
+    background-color: #1B4E5D;
+}
+
+.dashboard__sidebar a{
+    text-transform: uppercase;
+}
