@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, FABButton, Icon } from 'react-mdl';
+import { Layout, FABButton, Icon, Tooltip } from 'react-mdl';
 import { ipsPerCountry } from '../utils';
 import HeaderBar from './Header';
 import Sidebar from './Sidebar';
@@ -57,7 +57,6 @@ class Dashboard extends Component {
         this.setState({
             perCountry: ipsPerCountry(countries)
         });
-        console.log(this.state.perCountry);
     }
 
     overlayOpen() {
@@ -79,10 +78,12 @@ class Dashboard extends Component {
                     <HeaderBar />
                     <Sidebar />
                     <main className="dashboard__main">
-                        <Map dataCol={this.state.ipData} />
-                        <FABButton className="overlay-open" onClick={this.overlayOpen} colored ripple>
-                            <Icon name="last_page" />
-                        </FABButton>
+                        <Map attacks={this.state.perCountry} dataCol={this.state.ipData} />
+                        <Tooltip label="Open Pane" position="bottom">
+                            <FABButton className="overlay-open" onClick={this.overlayOpen} colored ripple>
+                                <Icon name="last_page" />
+                            </FABButton>
+                        </Tooltip>
                     </main> 
                     <OverlayList attacks={this.state.perCountry} overlayClose={this.overlayClose} open={this.state.overlay} />
                 </Layout>

@@ -7,10 +7,6 @@ class Overlay extends Component{
         super(props);
     }
 
-    componentDidUpdate(){
-        console.log(this.props);
-    }
-
     attacksList(){
         const list = [];
         for(const [country, value] of Object.entries(this.props.attacks)) {
@@ -25,8 +21,8 @@ class Overlay extends Component{
                 <div className="overlay-content">
                 <h1>Attacks Per Country</h1>
                     {
-                        this.attacksList().map( obj => (
-                            <AttackList country={obj.country} amount={obj.attacks} />
+                        this.attacksList().map( (obj, i) => (
+                            <AttackList key={i} country={obj.country} amount={obj.attacks} />
                         ))
                     }
                 </div>

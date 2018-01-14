@@ -19,7 +19,9 @@
 }
 
 .dashboard__sidebar a{
-    text-transform: uppercase;
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #161616 !important;
 }
 
 .overlay-open {

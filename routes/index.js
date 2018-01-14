@@ -1,7 +1,11 @@
 'use strict';
 const fs = require('fs');
+const firebase = require("firebase");
 const request = require('request');
 const datefns = require('date-fns');
+
+
+
 let connJson = require('../data/connections.json');
 let getLocale = (ip) => {
     return new Promise((res) => {
@@ -22,7 +26,6 @@ exports.plugin = {
             },
             handler: (r, h) => {
                 const amount = parseInt(r.params.limit); 
-                console.log(typeof amount);
                 const limit = (typeof amount === 'number')? amount : 33;
 
                 const d = connJson.sort((a, b) => {

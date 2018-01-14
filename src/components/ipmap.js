@@ -10,6 +10,11 @@ import {
     Annotation
   } from "react-simple-maps"
 
+import { scaleLinear } from "d3-scale"
+const cityScale = scaleLinear()
+  .domain([0,37843000])
+  .range([1,25])
+
 export default
 class IpMap extends Component {
     constructor(props) {
@@ -49,6 +54,7 @@ class IpMap extends Component {
                     scale: 350,
                     rotation: [-10,0,0],
                     yOffset: 65,
+                    xOffset: -15, 
                   }}
                 >
                 <ZoomableGroup zoom={ this.state.zoom }
@@ -74,20 +80,23 @@ class IpMap extends Component {
                     ))}
                     </Geographies>
                     <Markers>
-                    { this.props.dataCol.map((m, i) => (
-                        <Marker
-                        key={ i }
-                        marker={{ coordinates: m.properties.coords }}
-                        onClick={ this.handleMClick }
-                        style={{
-                            default: { fill: "#F95724", stroke:"#000", strokeWidth: 1.25 },
-                            hover:   { fill: "#2B7784", stroke:"#000", strokeWidth: 1.25  },
-                            pressed: { fill: "#000" },
-                        }}
-                        >
-                        <circle cx={ 0 } cy={ 0 } r={ 7 } />
-                        </Marker>
-                    ))}
+                    { this.props.dataCol.map((m, i) => {
+                        const count = this.props.attacks[m.properties.country] || [];
+                        return (
+                                <Marker
+                                key={ i }
+                                marker={{ coordinates: m.properties.coords }}
+                                onClick={ this.handleMClick }
+                                style={{
+                                    default: { fill: "rgba(249, 87, 36, 0.2)", stroke:"#79929E", strokeWidth: 1.25 },
+                                    hover:   { fill: "#2B7784"  },
+                                    pressed: { fill: "#000" },
+                                }}
+                                >
+                                <circle cx={ 0 } cy={ 0 } r={count.length} />
+                                </Marker>
+                            );
+                    })}
                     </Markers>
                     <Annotations>
                     {
@@ -101,8 +110,8 @@ class IpMap extends Component {
                         stroke="#F95724"
                         curve={0.5}
                         >
-                        <text fill="#F95724">
-                        { a.properties.country }
+                        <text fill="rgb(255,64,129)" strokeWidth={ 2 }>
+                        { `${a.properties.country}` }
                         </text>
                         </Annotation>
                         ))
