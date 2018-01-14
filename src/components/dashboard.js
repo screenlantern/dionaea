@@ -37,7 +37,6 @@ class Dashboard extends Component {
 
     buildMapObjects(){
         const ips = this.state.data.map((obj) => {
-            console.log(obj);
             return({
                 "properties": {
                     "city": obj.locale_info.city,
