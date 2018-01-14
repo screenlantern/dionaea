@@ -4,6 +4,7 @@ import { ipsPerCountry } from '../utils';
 import HeaderBar from './Header';
 import Sidebar from './Sidebar';
 import Map from './Ipmap';
+import OverlayList from './Overlay';
 import './dashboard.css';
 
 export default
@@ -14,8 +15,12 @@ class Dashboard extends Component {
         this.state = {
             data: [],
             ipData: [],
-            perCountry: {}
+            perCountry: {},
+            overlay: 'closed'
         }
+
+        this.overlayOpen = this.overlayOpen.bind(this);
+        this.overlayClose = this.overlayClose.bind(this);
     }
 
     componentDidMount() {
@@ -55,16 +60,31 @@ class Dashboard extends Component {
         console.log(this.state.perCountry);
     }
 
+    overlayOpen() {
+        this.setState({
+            overlay: 'open'
+        });
+    }
+
+    overlayClose() {
+        this.setState({
+            overlay: 'closed'
+        });
+    }
+
     render() {
         return(
-            <div className="dashboard" >
+            <div className="dashboard">
                 <Layout>
                     <HeaderBar />
                     <Sidebar />
                     <main className="dashboard__main">
                         <Map dataCol={this.state.ipData} />
-                    </main>
+                        <button className="show-list" onClick={this.overlayOpen}>Open</button>
+                    </main> 
+                    <OverlayList attacks={this.state.perCountry} overlayClose={this.overlayClose} open={this.state.overlay} />
                 </Layout>
+               
             </div>
         );
     }
