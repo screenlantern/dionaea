@@ -111,7 +111,7 @@ class IpMap extends Component {
                         curve={-0.5}
                         zoom={2}
                         >
-                        <text fill="rgb(255,64,129)" strokeWidth={ 2 }>
+                        <text fill="#1B4E5D" strokeWidth={ 2 }>
                         { `${a.properties.ip}` }
                         </text>
                         </Annotation>
