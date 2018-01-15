@@ -29,7 +29,7 @@ html, body {
 
 .overlay-content{
 	position: relative;
-	padding-top: 100px;
+	padding-top: 80px;
 	margin-left: 80px;
 }
 
@@ -41,6 +41,7 @@ html, body {
 .overlay-row{
 	display: flex;
 	flex-flow: row;
+	width: 100%;
 }
 
 .overlay-row .col:last-child{
@@ -70,7 +71,7 @@ html, body {
 } 
 
 .overlay  p span {
-	font-size: 36px;
+	font-size: 32px;
 	font-weight: 300;
 	display: block;
 	color: #fff;
@@ -79,7 +80,7 @@ html, body {
 }
 
 .overlay  p span:last-child{
-	font-size: 40px;
+	font-size: 38px;
 	padding-left: 30px;
 	color: #F95724;
 	opacity: 0.9;
