@@ -31,7 +31,6 @@ class Dashboard extends Component {
                 data
             });
             this.buildMapObjects();
-            this.perCountryCount();
         }); 
     }
 
@@ -49,6 +48,7 @@ class Dashboard extends Component {
         this.setState({
             ipData: ips
         });
+        this.perCountryCount();
     }
 
     perCountryCount() {
