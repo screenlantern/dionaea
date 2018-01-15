@@ -5,7 +5,7 @@ import HeaderBar from './Header';
 import Sidebar from './Sidebar';
 import Map from './Ipmap';
 import OverlayList from './Overlay';
-import './dashboard.css';
+import './Dashboard.css';
 
 export default
 class Dashboard extends Component {
