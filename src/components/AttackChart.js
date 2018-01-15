@@ -10,7 +10,7 @@ class Chart extends Component{
     populateChart(){
         const list = [];
         for(const [country, value] of Object.entries(this.props.attacks)) {
-            list.push({name:country, pv: value.length, amt: value.length});
+            list.push({name:country, attacks: value.length, amt: value.length});
         }
         return list;
     }
@@ -24,7 +24,7 @@ class Chart extends Component{
             <YAxis dataKey="amt" />
             <Tooltip />
             <Legend />
-            <Line type="monotone" dataKey="pv" stroke="#F95724" />
+            <Line type="monotone" dataKey="attacks" stroke="#F95724" />
             </LineChart>
             </ResponsiveContainer>
         );
