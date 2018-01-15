@@ -23,19 +23,28 @@ html, body {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(158, 169, 187, 0.8);
+	background: rgba(158, 169, 187, 0.95);
 	overflow-y:scroll;
 }
 
 .overlay-content{
 	position: relative;
 	padding-top: 100px;
-	margin-left: 100px;
+	margin-left: 80px;
 }
 
 .overlay-content h1{
 	color: #162626;
 	font-weight: 300;
+}
+
+.overlay-row{
+	display: flex;
+	flex-flow: row;
+}
+
+.overlay-row .col:last-child{
+	margin-left: 40px;
 }
 
 /* Overlay closing cross */
@@ -71,7 +80,7 @@ html, body {
 
 .overlay  p span:last-child{
 	font-size: 40px;
-	padding-left: 50px;
+	padding-left: 30px;
 	color: #F95724;
 	opacity: 0.9;
 }
