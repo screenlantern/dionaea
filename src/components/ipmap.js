@@ -107,7 +107,7 @@ class IpMap extends Component {
                             dy={ 30 }
                             subject={  a.properties.coords}
                             strokeWidth={ 1 }
-                            stroke="#F95724"
+                            stroke="#1B4E5D"
                             curve={-0.5}
                             zoom={2}
                             >
