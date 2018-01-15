@@ -118,7 +118,7 @@ class IpMap extends Component {
                         </Annotation>
                      ))
                     }
-                    </Annotations> */}
+                    </Annotations>*/}
                 </ZoomableGroup>
                 </ComposableMap>
             </div>

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { Layout, FABButton, Icon, Tooltip } from 'react-mdl';
+import { Layout } from 'react-mdl';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import { itemsPerCollection } from '../utils';
 import HeaderBar from './Header';
 import Sidebar from './Sidebar';
-import Map from './Ipmap';
-import OverlayList from './Overlay';
+import AttackView from './AttackView';
+import ProtocolView from './ProtocolView';
 import './Dashboard.css';
 
 export default
@@ -62,22 +63,22 @@ class Dashboard extends Component {
 
     render() {
         return(
+            <Router>
             <div className="dashboard">
                 <Layout>
                     <HeaderBar />
                     <Sidebar />
-                    <main className="dashboard__main">
-                        <Map attacks={this.state.perCountry} dataCol={this.state.data} />
-                        <Tooltip label="Open Pane" position="bottom">
-                            <FABButton className="overlay-open" onClick={this.overlayOpen} colored ripple>
-                                <Icon name="last_page" />
-                            </FABButton>
-                        </Tooltip>
-                    </main> 
-                    <OverlayList attacks={this.state.perCountry} overlayClose={this.overlayClose} open={this.state.overlay} />
+                <AttackView 
+                    attacks={this.state.perCountry} 
+                    dataCol={this.state.data} 
+                    open={this.state.overlay}
+                    overlayOpen={this.overlayOpen}
+                    overlayClose={this.overlayClose}
+                />
                 </Layout>
-               
+                <Route path="/protocol" component={ProtocolView} />
             </div>
+            </Router>
         );
     }
 }
