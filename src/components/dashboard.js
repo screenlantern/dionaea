@@ -68,14 +68,20 @@ class Dashboard extends Component {
                 <Layout>
                     <HeaderBar />
                     <Sidebar />
-                <AttackView 
-                    attacks={this.state.perCountry} 
-                    dataCol={this.state.data} 
-                    open={this.state.overlay}
-                    overlayOpen={this.overlayOpen}
-                    overlayClose={this.overlayClose}
-                />
                 </Layout>
+                <Route
+                    exact path="/"
+                    render={(routeProps) => (
+                        <AttackView 
+                            {...routeProps}
+                            attacks={this.state.perCountry} 
+                            dataCol={this.state.data} 
+                            open={this.state.overlay}
+                            overlayOpen={this.overlayOpen}
+                            overlayClose={this.overlayClose}
+                        />
+                    )}
+                />
                 <Route path="/protocol" component={ProtocolView} />
             </div>
             </Router>
