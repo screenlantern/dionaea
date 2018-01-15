@@ -14,7 +14,6 @@ body{
 	font-family: 'Roboto', sans-serif;
 }
 
-/* Overlay style */
 .overlay {
 	position: fixed;
 	display: flex;
@@ -50,7 +49,6 @@ body{
 	margin-left: 80px;
 }
 
-/* Overlay closing cross */
 .overlay .overlay-close {
 	position: absolute;
 	right: 20px;
@@ -127,14 +125,4 @@ body{
 .overlay-door.close .overlay-close {
 	-webkit-transition-delay: 0s;
 	transition-delay: 0s;
-}
-
-@media screen and (max-height: 30.5em) {
-	.overlay nav {
-		height: 70%;
-		font-size: 34px;
-	}
-	.overlay ul li {
-		min-height: 34px;
-	}
 }
