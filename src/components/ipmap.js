@@ -98,7 +98,7 @@ class IpMap extends Component {
                             );
                     })}
                     </Markers>
-                    <Annotations>
+                    {/* <Annotations>
                     {
                     this.props.dataCol.map((a, i) => (
                         <Annotation
@@ -117,7 +117,7 @@ class IpMap extends Component {
                         </Annotation>
                      ))
                     }
-                    </Annotations>
+                    </Annotations> */}
                 </ZoomableGroup>
                 </ComposableMap>
             </div>
