@@ -5,13 +5,13 @@
 	outline: none;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
-    background-color: #f6f6f6;
-}
-
 html, body {
 	overflow-x: hidden;
+}
+
+body{
+	background-color: #f6f6f6;
+	font-family: 'Roboto', sans-serif;
 }
 
 /* Overlay style */
@@ -35,7 +35,8 @@ html, body {
 
 .overlay-content h1{
 	color: #162626;
-	font-weight: 300;
+	font-weight: 100;
+	font-size: 52px;
 }
 
 .overlay-row{
@@ -59,9 +60,11 @@ html, body {
 }
 
 .overlay p {
+	font-family: 'Roboto', sans-serif;
 	display: flex;
 	flex-flow: row;
 	margin-top: 40px;
+	font-weight: 300;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
@@ -72,7 +75,6 @@ html, body {
 
 .overlay  p span {
 	font-size: 32px;
-	font-weight: 300;
 	display: block;
 	color: #fff;
 	-webkit-transition: color 0.2s;
