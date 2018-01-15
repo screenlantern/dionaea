@@ -37,6 +37,7 @@ body{
 	color: #162626;
 	font-weight: 100;
 	font-size: 52px;
+	margin-bottom: 30px;
 }
 
 .overlay-row{
@@ -58,6 +59,10 @@ body{
 	z-index: 100;
 	background-color: #F95724 !important;
 }
+
+.overlay p:first-child{
+	margin-top: 0;
+} 
 
 .overlay p {
 	font-family: 'Roboto', sans-serif;
