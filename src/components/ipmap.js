@@ -19,7 +19,7 @@ export default
 class IpMap extends Component {
     constructor(props) {
         super(props)
-        console.log(props);
+        
         this.state = {
             zoom: 1
         }
