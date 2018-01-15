@@ -89,7 +89,7 @@ class IpMap extends Component {
                                 onClick={ this.handleMClick }
                                 style={{
                                     default: { fill: "rgba(249, 87, 36, 0.2)", stroke:"#79929E", strokeWidth: 1.25 },
-                                    hover:   { fill: "#2B7784"  },
+                                    hover:   { fill: "rgba(43, 119, 132, 0.2)"  },
                                     pressed: { fill: "#000" },
                                 }}
                                 >
@@ -108,7 +108,8 @@ class IpMap extends Component {
                         subject={  a.properties.coords}
                         strokeWidth={ 1 }
                         stroke="#F95724"
-                        curve={0.5}
+                        curve={-0.5}
+                        zoom={2}
                         >
                         <text fill="rgb(255,64,129)" strokeWidth={ 2 }>
                         { `${a.properties.ip}` }
