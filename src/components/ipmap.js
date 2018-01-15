@@ -68,12 +68,12 @@ class IpMap extends Component {
                         onClick={this.handleGClick} 
                         style={{
                             default: {
-                              fill: "#666",
+                              fill: "#999",
                               stroke: "#F6F6F6",
                               strokeWidth: 0.5,
                               outline: "none",
                             },
-                            hover:   { fill: "#999" },
+                            hover:   { fill: "#666" },
                             pressed: { fill: "#000" },
                           }}
                         />
