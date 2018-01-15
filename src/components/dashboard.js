@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Layout, FABButton, Icon, Tooltip } from 'react-mdl';
-import { ipsPerCountry } from '../utils';
+import { itemsPerCollection } from '../utils';
 import HeaderBar from './Header';
 import Sidebar from './Sidebar';
 import Map from './Ipmap';
@@ -14,7 +14,7 @@ class Dashboard extends Component {
 
         this.state = {
             data: [],
-            ipData: [],
+            perProtocol: {},
             perCountry: {},
             overlay: 'closed'
         }
@@ -30,31 +30,21 @@ class Dashboard extends Component {
             this.setState({
                 data
             });
-            this.buildMapObjects();
+            this.perCountryCount();
         }); 
-    }
-
-    buildMapObjects(){
-        const ips = this.state.data.map((obj) => {
-            return({
-                "properties": {
-                    "city": obj.locale_info.city,
-                    "country": obj.locale_info.country,
-                    "coords": [obj.locale_info.lon, obj.locale_info.lat],
-                    "ip": obj.remote_host
-                }
-            });
-        }); 
-        this.setState({
-            ipData: ips
-        });
-        this.perCountryCount();
     }
 
     perCountryCount() {
-        const countries = this.state.ipData.map((c) => c.properties.country );
+        const countries = this.state.data.map((c) => c.locale_info.country );
         this.setState({
-            perCountry: ipsPerCountry(countries)
+            perCountry: itemsPerCollection(countries)
+        });
+    }
+
+    perProtocolCount() {
+        const conns = this.state.data.map((p) => p.connection_protocol );
+        this.setState({
+            perProtocol: itemsPerCollection(conns)
         });
     }
 
@@ -77,7 +67,7 @@ class Dashboard extends Component {
                     <HeaderBar />
                     <Sidebar />
                     <main className="dashboard__main">
-                        <Map attacks={this.state.perCountry} dataCol={this.state.ipData} />
+                        <Map attacks={this.state.perCountry} dataCol={this.state.data} />
                         <Tooltip label="Open Pane" position="bottom">
                             <FABButton className="overlay-open" onClick={this.overlayOpen} colored ripple>
                                 <Icon name="last_page" />

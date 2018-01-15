@@ -15,6 +15,7 @@ const cityScale = scaleLinear()
   .domain([0,37843000])
   .range([1,25])
 
+
 export default
 class IpMap extends Component {
     constructor(props) {
@@ -81,11 +82,11 @@ class IpMap extends Component {
                     </Geographies>
                     <Markers>
                     { this.props.dataCol.map((m, i) => {
-                        const count = this.props.attacks[m.properties.country] || [];
+                        const count = this.props.attacks[m.locale_info.country] || [];
                         return (
                                 <Marker
                                 key={ i }
-                                marker={{ coordinates: m.properties.coords }}
+                                marker={{ coordinates: [m.locale_info.lon, m.locale_info.lat] }}
                                 onClick={ this.handleMClick }
                                 style={{
                                     default: { fill: "rgba(255, 87, 34, 0.4)", stroke:"rgb(96, 125, 139)", strokeWidth: 1.25 },
@@ -105,14 +106,14 @@ class IpMap extends Component {
                             key={i}
                             dx={ -30 }
                             dy={ 30 }
-                            subject={  a.properties.coords}
+                            subject={ [m.locale_info.lon, m.locale_info.lat] }
                             strokeWidth={ 1 }
                             stroke="#1B4E5D"
                             curve={-0.5}
                             zoom={2}
                             >
                             <text fill="#1B4E5D" strokeWidth={ 2 }>
-                            { `${a.properties.ip}` }
+                            { `${a.remote_host}` }
                             </text>
                         </Annotation>
                      ))

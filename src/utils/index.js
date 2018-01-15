@@ -1,6 +1,6 @@
 'use strict';
 
-const countIpsPerCountry = (arr) => {
+const itemsPerCollection = (arr) => {
     let result = {};
     if (arr instanceof Array) { 
         arr.forEach(function (v, i) {
@@ -15,5 +15,5 @@ const countIpsPerCountry = (arr) => {
 }
 
 export {
-    countIpsPerCountry as ipsPerCountry,
+    itemsPerCollection
   };
