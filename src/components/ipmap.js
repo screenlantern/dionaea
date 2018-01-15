@@ -88,7 +88,7 @@ class IpMap extends Component {
                                 marker={{ coordinates: m.properties.coords }}
                                 onClick={ this.handleMClick }
                                 style={{
-                                    default: { fill: "rgba(249, 87, 36, 0.2)", stroke:"#79929E", strokeWidth: 1.25 },
+                                    default: { fill: "rgba(255, 87, 34, 0.4)", stroke:"rgb(96, 125, 139)", strokeWidth: 1.25 },
                                     hover:   { fill: "rgba(43, 119, 132, 0.2)"  },
                                     pressed: { fill: "#000" },
                                 }}
