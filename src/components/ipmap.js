@@ -101,21 +101,21 @@ class IpMap extends Component {
                     <Annotations>
                     {
                     this.props.dataCol.map((a, i) => (
-                    <Annotation
-                        key={i}
-                        dx={ -30 }
-                        dy={ 30 }
-                        subject={  a.properties.coords}
-                        strokeWidth={ 1 }
-                        stroke="#F95724"
-                        curve={-0.5}
-                        zoom={2}
-                        >
-                        <text fill="#1B4E5D" strokeWidth={ 2 }>
-                        { `${a.properties.ip}` }
-                        </text>
+                        <Annotation
+                            key={i}
+                            dx={ -30 }
+                            dy={ 30 }
+                            subject={  a.properties.coords}
+                            strokeWidth={ 1 }
+                            stroke="#F95724"
+                            curve={-0.5}
+                            zoom={2}
+                            >
+                            <text fill="#1B4E5D" strokeWidth={ 2 }>
+                            { `${a.properties.ip}` }
+                            </text>
                         </Annotation>
-                        ))
+                     ))
                     }
                     </Annotations>
                 </ZoomableGroup>
