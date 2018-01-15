@@ -90,7 +90,7 @@ class IpMap extends Component {
                                 style={{
                                     default: { fill: "rgba(255, 87, 34, 0.4)", stroke:"rgb(96, 125, 139)", strokeWidth: 1.25 },
                                     hover:   { fill: "rgba(43, 119, 132, 0.2)"  },
-                                    pressed: { fill: "#000" },
+                                    pressed: { fill: "rgb(96, 125, 139)" },
                                 }}
                                 >
                                 <circle cx={ 0 } cy={ 0 } r={count.length} />
