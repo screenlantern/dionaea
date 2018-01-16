@@ -16,7 +16,7 @@ class ProtocolView extends Component {
     populateChart(){
         const list = [];
         for(const [protocol, value] of Object.entries(this.props.connections)) {
-            list.push({name:protocol, connections: value.length});
+            list.push({name:protocol, connections: value.length, amt: value.length});
         }
         return list;
     }
@@ -33,7 +33,7 @@ class ProtocolView extends Component {
                 </linearGradient>
             </defs>
             <XAxis dataKey="name" />
-            <YAxis dataKey="connections"/>
+            <YAxis dataKey="amt"/>
             <CartesianGrid strokeDasharray="3 3" />
             <Tooltip />
             <Area type="monotone" dataKey="connections" stroke="#82ca9d" fillOpacity={1} fill="url(#colorPv)" />
