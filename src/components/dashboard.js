@@ -32,6 +32,7 @@ class Dashboard extends Component {
                 data
             });
             this.perCountryCount();
+            this.perProtocolCount();
         }); 
     }
 
@@ -69,6 +70,7 @@ class Dashboard extends Component {
                     <HeaderBar />
                     <Sidebar />
                 </Layout>
+                <main className="dashboard__main">
                 <Route
                     exact path="/"
                     render={(routeProps) => (
@@ -82,7 +84,13 @@ class Dashboard extends Component {
                         />
                     )}
                 />
-                <Route path="/protocol" component={ProtocolView} />
+                <Route
+                    path="/protocols"
+                    render={(routeProps) => (
+                      <ProtocolView {...routeProps} connections={this.state.perProtocol} />
+                    )}
+                />
+                </main> 
             </div>
             </Router>
         );

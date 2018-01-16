@@ -1,9 +1,6 @@
-.dashboard{
+.dashboard__main{
     position: relative;
     height: calc(100vh - 5px);
-}
-
-.dashboard__main{
     display: flex;
     align-items: center;
     justify-content: center;

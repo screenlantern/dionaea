@@ -54,7 +54,7 @@ class IpMap extends Component {
                 projectionConfig={{
                     scale: 350,
                     rotation: [-10,0,0],
-                    yOffset: 65,
+                    yOffset: 80,
                     xOffset: -15, 
                   }}
                 >
